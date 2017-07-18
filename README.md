@@ -1,3 +1,6 @@
+# What is this?
+This is a simple python script used in linux x64 server for ict network login.
+
 ```
 git clone https://github.com/amosbird/ictlogin
 cd ictlogin
