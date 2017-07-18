@@ -1,4 +1,6 @@
 ```
+git clone https://github.com/amosbird/ictlogin
+cd ictlogin
 pip install ./selenium-3.4.3-py2.py3-none-any.whl --user
 ```
 
