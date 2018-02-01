@@ -19,7 +19,13 @@ def connect():
 
     logging.info("Connected")
     time.sleep(1)
-    driver.quit()
+    try:
+        driver.quit()
+    except OSError as e:
+        # Maybe this is a bug of the selenium package
+        # Stackoverflow says updating to the neweset
+        # version fix this, but we just ignore it here
+        pass
 
 def connected():
     response = subprocess.check_output(['curl', '-s', 'www.baidu.com'])
