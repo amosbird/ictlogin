@@ -48,9 +48,14 @@ if __name__ == '__main__':
     )
 
     # Reading account info
-    with open("account.conf", "r") as f:
-        username = f.readline().strip('\n')
-        password = f.readline().strip('\n')
+    try:
+        with open("account.conf", "r") as f:
+            username = f.readline().strip('\n')
+            password = f.readline().strip('\n')
+    except Exception as e:
+        logging.error('please create `account.conf` with the first line '
+                      'as your username and second line as your password')
+        exit(1)
 
     # Infinite loop
     while True:
