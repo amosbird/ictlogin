@@ -10,7 +10,7 @@ import signal
 def connect(username, password):
     logging.info("Connecting")
     driver = webdriver.PhantomJS()
-    driver.get('http://159.226.39.22/srun_portal_pc.php?ac_id=1&')
+    driver.get('https://gw.ict.ac.cn/srun_portal_pc.php?ac_id=1&')
 
     username_element = driver.find_element_by_name("username")
     username_element.send_keys(username)
@@ -32,7 +32,7 @@ def connect(username, password):
 
 def connected():
     response = subprocess.check_output(['curl', '-s', 'www.baidu.com'])
-    if '159.226.39.22' in response:
+    if not '百度' in response:
         logging.info("No internet connection")
         return False
     else:
